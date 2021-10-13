@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Chibbi Girls</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+  <script type="text/javascript" src="./particles.js"></script>
+</head>
+
+<body>
+  <script type="x-shader/x-vertex" id="vertexshader">
+
+        attribute float size;
+        attribute vec3 customColor;
+        varying vec3 vColor;
+      
+        void main() {
+      
+          vColor = customColor;
+          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+          gl_PointSize = size * ( 300.0 / -mvPosition.z );
+          gl_Position = projectionMatrix * mvPosition;
+      
+        }
+      
+      </script>
+  <script type="x-shader/x-fragment" id="fragmentshader">
+
+       uniform vec3 color;
+       uniform sampler2D pointTexture;
+      
+       varying vec3 vColor;
+      
+       void main() {
+      
+         gl_FragColor = vec4( color * vColor, 1.0 );
+         gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+      
+       }
+      </script>
+  <nav class="navbar fixed-top">
+    <a class="navbar-brand" href="#"></a>
+    <div class="col-sm-auto justify-align-end">
+      <a href="https://www.twitter.com/cutechibbigirls" target="_blank"> <img
+          src="https://img.icons8.com/fluent/24/000000/twitter.png" /></a>
+    </div>
+  </nav>
+  <div id="magic"></div>
+  <div class="playground">
+    <div class="bottomPosition">
+
+    </div>
+  </div>
+  <div style="height: 35vh;"></div>
+  <div class="container black">
+    <div class="row">
+      
+      <div class="col-sm-12 header-image">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="information">
+          <h1>Welcome to the world of Chibba.</h1>
+          <p>In a far-off time and place, exists a quite peculiar world adorned with many unique wonders. This world is
+            none other than the world of Chibba, a planet inhabited by cute beings, the most prominent being the "Cute
+            Chibbi Girls' (CCG). As orthodox as it may seem, they all live pretty normal lives while engaging in
+            activities like working, playing, gaming, simply being lazy, and most importantly, looking and being
+            absolutely cute.</p>
+        </div>
+        <div class="information">
+          <h2>How did we end up in the metaverse?</h2>
+          <p>We live in our own world with exactly 1000 girls, from 250 unique families. Each of us has her own traits,
+            strenght and weakness. But the one trait we share is, we are all cute in some way. There is an upcoming
+            contest where we all will battle to determine who is the cutest Chibbi of all, that's the one thing we all
+            "fight" about every now and then.</p>
+          <h3>Fair Distribution</h3>
+          <p>Everyone should get a chance to be in power of a Chibbi, for that reason we will give 100 unique wallets
+            access to a pre-mint where buyers receive a placeholder NFT until the real launch for a price of only
+            0.05ETH. After the pre-mint phase the price will rise and stay at .15ETH</p>
+          <p class="note">Pre minters will receive a special gift once the minting phase is done in exchange for their
+            trust</p>
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-6 chibbi-reveal">
+            <img src="./assets/001a.png" alt="">
+          </div>
+          <div class="col-sm-6 chibbi-reveal">
+            <img src="./assets/002a.png" alt="">
+          </div>
+          <div class="col-sm-6 chibbi-reveal">
+            <img src="./assets/003a.png" alt="">
+          </div>
+          <div class="col-sm-6 chibbi-reveal">
+            <img src="./assets/004a.png" alt="">
+          </div>
+          <div class="col-sm-12 chibbi-reveal"><img src="./assets/comic.jpeg" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 background-purple">
+        <div class="row">
+          <div class="col-sm-8">
+            <!-- <div class="subscribe bbb-wrapper fl-wrap">
+              <div class="subcribe-form fl-wrap"> -->
+                <p class="whitelist">Get whitelisted! (Coming soon)</p>
+                <!-- <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email"
+                    placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button"
+                    class="subscribe-button color-bg"><i class="fa fa-rss"></i> Subscribe</button> <label
+                    for="subscribe-email" class="subscribe-message"></label> </form> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr class="white-line mb-5">
+        <h1>Cute Chibbi want you as our leader!</h1>
+        <p>When buying a Chibbi girl, you are not buying an avatar or jpeg. You are buying access to a complete world. You get part of the future of our world. Our comic storyline and much more. Additional benefits will open up over time, some of them are already on the roadmap, more will follow when the community grows.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        [passende afbeelding/illustratie]
+        <p>1.000 Unique Cute Chibbi Girls.</p>
+      </div>
+      <div class="col-3">
+        [passende afbeelding/illustratie]
+        <p>Low Cost, High Value.</p>
+      </div>
+      <div class="col-3">
+        [passende afbeelding/illustratie]
+        <p>Become part of an evergrowing community.</p>
+      </div>
+      <div class="col-3">
+        [passende afbeelding/illustratie]
+        <p>Gain additional benefits from being part of the community from the IP profits via roadmap activations.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr class="white-line mb-5">
+      </div>
+      <div class="col-12 credits">
+        <p>Created with <3 ByRico | 2021 all rights reserved</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- <a href="http://sanprieto.es/" target="_blank"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.8 278.8"><circle fill="#000205" cx="139.4" cy="139.4" r="139.4"/><g fill="none" stroke="#FFF" stroke-width="6.062" stroke-miterlimit="10"><path d="M214 183.4l-74.6 43.1-75.5-43.6V95.8l75.5-43.5 75.4 43.5v59.8l-11.3 6.5z"/><path d="M139.4 226.5l-18.8-38.2 18.8 10.8 75.4-43.5M63.9 95.8l75.3 43.6 75.6-43.6M139.2 139.4v59.7"/></g>
+</svg></a>
+ <h1 class="special">By Rico <br><span class="minText">Creative developer && Pixelart designer.</span></h1> -->
+<!-- 
+ <svg viewbox="0 0 50 50" width="50" height="50" >
+  <defs>
+    <mask id="mask" x="0" y="0" width="100" height="49">
+      <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
+      <text x="20" text-anchor="middle" y="50" dy="0">0</text>
+      <text x="25" id="ltrV" text-anchor="middle" y="50" dy="0">0</text>
+      <text x="30" text-anchor="middle" y="50" dy="0">1</text>
+    </mask>
+  </defs>
+  <rect x="0.5" y="0.5" width="49" height="49" mask="url(#mask)" fill-opacity="1" fill="#E3DFD2"/>
+</svg> -->
